@@ -6,6 +6,9 @@ body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 Inter,sys
 h1,h2,h3{font-family:'Bricolage Grotesque',Inter,sans-serif;line-height:1.1;margin:0}
 a{color:var(--accent)}:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
 .nav{position:sticky;top:0;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:14px max(20px,5vw);background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.scroll-bubbles{position:fixed;inset:0;z-index:4;overflow:hidden;pointer-events:none}
+.scroll-bubble{position:absolute;left:var(--bubble-x);bottom:-48px;width:var(--bubble-size);height:var(--bubble-size);border:1px solid rgba(255,255,255,.82);border-radius:50%;background:radial-gradient(ellipse at 30% 24%,rgba(255,255,255,.9) 0 5%,color-mix(in srgb,var(--accent) 25%,transparent) 28%,color-mix(in srgb,var(--accent) 7%,transparent) 72%);box-shadow:inset -3px -4px 8px rgba(43,89,255,.12),0 0 18px rgba(43,89,255,.08);animation:bubble-rise var(--bubble-duration) ease-out forwards}
+@keyframes bubble-rise{to{opacity:0;transform:translate3d(var(--bubble-drift),var(--bubble-rise-offset),0) scale(.72)}}
 .brand{font:700 1.1rem 'Bricolage Grotesque',sans-serif;color:var(--ink);text-decoration:none}
 .nav nav{display:flex;gap:20px;align-items:center}.nav nav a{color:var(--muted);text-decoration:none;font-size:.95rem}.nav nav a:hover{color:var(--ink)}
 #theme{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:99px;padding:6px 14px;cursor:pointer;font:inherit;font-size:.9rem}
